@@ -11,6 +11,8 @@ setupLanguageSwitcher();
 setupThemeToggle();
 
 const conversation = createConversation();
+// O back aceita até 100 mensagens e o tutor só usa as 20 últimas: mandar 40 mantém uma folga sem nunca estourar.
+const SENT_MESSAGES = 40;
 
 const exercise = setupExercisePanel({
   generate: (difficulty, avoid) => fetchExercise({ difficulty, avoid, language: getLanguage() }),
@@ -30,7 +32,7 @@ setupComposer(async (text) => {
 
   try {
     const answer = await streamTutor(
-      { messages: conversation.messages, language: getLanguage(), exercise: exercise.payload },
+      { messages: conversation.recent(SENT_MESSAGES), language: getLanguage(), exercise: exercise.payload },
       reply.write,
     );
     if (conversation.id === conversationId) conversation.add("assistant", answer);

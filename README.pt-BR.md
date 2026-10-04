@@ -111,7 +111,7 @@ cp .env.example .env    # depois cole a sua chave no .env
 uvicorn backend.main:app --reload
 ```
 
-Abra http://localhost:8000. Cada resposta do tutor custa uns US$ 0,0035, e cada exercício novo uns US$ 0,0007. O custo exato de cada chamada aparece no terminal.
+Abra http://localhost:8000. Cada resposta do tutor custa uns US$ 0,0035, e cada exercício novo uns US$ 0,0007. O custo exato de cada chamada aparece no terminal. Se for abrir por outro endereço que não o localhost, coloque esse endereço no `ALLOWED_HOSTS` do `.env`.
 
 **Testes** (de graça, sem chave):
 
@@ -128,6 +128,19 @@ python -m evals.run_eval v3 v4     # compara duas versões com o mesmo juiz
 python -m evals.history            # todas as rodadas até agora
 ```
 
+## Segurança
+
+O app roda na sua máquina, com a sua chave, e cada request custa dinheiro de verdade. Por isso o servidor toma cuidado com quem pode fazer ele gastar:
+
+- **A chave nunca sai do servidor.** Ela fica no `.env`, que o git ignora, e o navegador nunca vê.
+- **Só esta página consegue chamar a API.** A request precisa ser JSON, chegar por um endereço permitido e, quando o navegador informa a origem, vir deste mesmo site. Um site malicioso não consegue fazer o seu navegador gastar os seus créditos, nem com DNS rebinding.
+- **Limite em tudo o que custa dinheiro:** 20 requests pagas por minuto por visitante, 1 MB por request, 1.000 caracteres por mensagem do estudante, e só as últimas 20 mensagens chegam ao modelo.
+- **As instruções do tutor não podem ser reescritas pelo navegador.** A história do exercício entra no system prompt do tutor, então o servidor assina cada história que escreve (HMAC) e descarta qualquer história que ele não assinou.
+- **O texto do modelo nunca vira HTML**, e uma Content Security Policy só deixa rodar os scripts do próprio site.
+- **Os erros dizem o que deu errado, não como o servidor funciona por dentro.** A documentação automática da API (`/docs`) fica desligada, a não ser que você coloque `API_DOCS=1`.
+
+Se um dia for colocar isso na internet, coloque um login antes: sem ele, qualquer pessoa que achar a página usa a sua chave.
+
 ## Estrutura do projeto
 
 ```
@@ -139,12 +152,13 @@ backend/
   stream_events.py   os pequenos eventos JSON mandados ao navegador
   schemas.py         validação das requests
   errors.py          erros da API viram códigos amigáveis
-  exercises/         equações sorteadas, gerador de histórias, validação
+  security.py        cabeçalhos de segurança, checagem das requests, limite por minuto
+  exercises/         equações sorteadas, gerador de histórias, validação, assinatura
   prompts/           versões do prompt do tutor (v1 a v4) e o prompt das histórias
   routes/            /api/health, /api/chat, /api/exercise
 frontend/            HTML, CSS e módulos JS puros, sem etapa de build
 evals/               dataset, checagens de código, juiz, relatório, histórico, resultados
-tests/               91 testes, nenhum chama a API
+tests/               112 testes, nenhum chama a API
 docs/                GIF da demo e screenshots
 ```
 

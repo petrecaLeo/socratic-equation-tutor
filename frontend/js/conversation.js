@@ -6,8 +6,8 @@ export function createConversation() {
     get id() {
       return id;
     },
-    get messages() {
-      return [...messages];
+    recent(limit) {
+      return messages.slice(-limit);
     },
     add(role, content) {
       messages.push({ role, content });

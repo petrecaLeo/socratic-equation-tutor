@@ -1,5 +1,6 @@
 import anthropic
 from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 from backend.exercises.generator import ExerciseGenerationFailed
@@ -11,6 +12,11 @@ def error_response(code: str, status_code: int) -> JSONResponse:
 
 
 def register_error_handlers(app: FastAPI) -> None:
+    # Sem detalhes: a resposta padrão do FastAPI devolve o dado enviado e o formato interno dos schemas.
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(request: Request, error: RequestValidationError) -> JSONResponse:
+        return error_response("invalid_request", 422)
+
     @app.exception_handler(anthropic.AuthenticationError)
     async def invalid_api_key(request: Request, error: anthropic.AuthenticationError) -> JSONResponse:
         return error_response("invalid_api_key", 500)

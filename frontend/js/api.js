@@ -1,9 +1,11 @@
 import { t } from "./i18n.js";
 import { readNdjson } from "./ndjson.js";
 
-function errorCode(status, data) {
-  if (data.code) return data.code;
-  return status === 422 ? "invalid_request" : "unknown";
+function errorMessage(status, data) {
+  const code = data.code ?? (status === 422 ? "invalid_request" : "unknown");
+  const message = t(`errors.${code}`);
+  // Código sem tradução cai na mensagem genérica, em vez de mostrar "errors.xyz" na tela.
+  return message === `errors.${code}` ? t("errors.unknown") : message;
 }
 
 async function post(path, body) {
@@ -20,7 +22,7 @@ async function post(path, body) {
 
   if (!response.ok) {
     const data = await response.json().catch(() => ({}));
-    throw new Error(t(`errors.${errorCode(response.status, data)}`));
+    throw new Error(errorMessage(response.status, data));
   }
   return response;
 }

@@ -73,8 +73,9 @@ export function setupExercisePanel({ generate, onChange }) {
 
   return {
     get payload() {
-      const { story, a, b, c, d } = current;
-      return { story: story ?? "", a, b, c, d };
+      // A assinatura volta junto: sem ela, o servidor descarta a história (ela vai para o prompt do tutor).
+      const { story, a, b, c, d, signature } = current;
+      return { story: story ?? "", a, b, c, d, signature: signature ?? null };
     },
   };
 }

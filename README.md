@@ -111,7 +111,7 @@ cp .env.example .env    # then paste your key into .env
 uvicorn backend.main:app --reload
 ```
 
-Open http://localhost:8000. Each tutor reply costs about $0.0035 and each new exercise about $0.0007. The exact cost of every call shows up in the terminal.
+Open http://localhost:8000. Each tutor reply costs about $0.0035 and each new exercise about $0.0007. The exact cost of every call shows up in the terminal. If you open it from an address other than localhost, add that address to `ALLOWED_HOSTS` in `.env`.
 
 **Tests** (free, no key needed):
 
@@ -128,6 +128,19 @@ python -m evals.run_eval v3 v4     # compare two versions with the same judge
 python -m evals.history            # every round so far
 ```
 
+## Security
+
+This runs on your machine with your own API key, and every request costs real money. So the server is careful about who can make it spend:
+
+- **The key never leaves the server.** It lives in `.env`, which git ignores, and the browser never sees it.
+- **Only this page can call the API.** Requests must be JSON, sent to an allowed host and, when the browser says where they come from, from this same site. A malicious website can't make your browser spend your credits, not even through DNS rebinding.
+- **Limits on everything that costs money:** 20 paid requests per minute per visitor, 1 MB per request, 1,000 characters per student message, and only the last 20 messages reach the model.
+- **The tutor's instructions can't be rewritten from the browser.** The exercise story goes into the tutor's system prompt, so the server signs every story it writes (HMAC) and drops any story it didn't sign.
+- **Model text is never treated as HTML**, and a Content Security Policy only lets this site's own scripts run.
+- **Errors say what went wrong, not how the server works inside.** The automatic API docs (`/docs`) stay off unless you set `API_DOCS=1`.
+
+If you ever put this online, add a login first: without one, anyone who finds the page can use your key.
+
 ## Project structure
 
 ```
@@ -139,12 +152,13 @@ backend/
   stream_events.py   the small JSON events sent to the browser
   schemas.py         request validation
   errors.py          API errors turned into friendly codes
-  exercises/         random equations, story generator, validation
+  security.py        security headers, request checks, rate limit
+  exercises/         random equations, story generator, validation, signing
   prompts/           tutor prompt versions (v1 to v4) and the story prompt
   routes/            /api/health, /api/chat, /api/exercise
 frontend/            plain HTML, CSS and JS modules, no build step
 evals/               dataset, code checks, judge, report, history, results
-tests/               91 tests, none of them call the API
+tests/               112 tests, none of them call the API
 docs/                demo GIF and screenshots
 ```
 

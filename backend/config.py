@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -27,3 +28,13 @@ MAX_MESSAGE_CHARS = 3000
 MAX_REQUEST_MESSAGES = 100
 # Só as últimas mensagens vão para o modelo: os tokens de entrada crescem a cada rodada.
 MAX_HISTORY_MESSAGES = 20
+MAX_STUDENT_MESSAGE_CHARS = 1000
+
+# Segurança
+# Hosts aceitos no cabeçalho Host: barra DNS rebinding (um site de fora fingindo ser o localhost).
+ALLOWED_HOSTS = [host.strip() for host in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if host.strip()]
+MAX_BODY_BYTES = 1_048_576
+# Cada request ao chat ou ao gerador vira uma chamada paga: limite por IP, por minuto.
+RATE_LIMIT_PER_MINUTE = 20
+# A documentação automática (/docs) fica desligada, a não ser que API_DOCS=1.
+API_DOCS = os.getenv("API_DOCS") == "1"

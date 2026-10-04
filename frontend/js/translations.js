@@ -27,6 +27,7 @@ export const translations = {
     "errors.stream_interrupted": "A resposta foi interrompida no meio. Tente de novo.",
     "errors.empty_reply": "O tutor não respondeu nada. Tente de novo.",
     "errors.exercise_failed": "Não consegui criar um exercício agora. Tente de novo.",
+    "errors.rate_limited": "Muitas mensagens seguidas. Espere um minuto e tente de novo.",
     "errors.unknown": "Algo deu errado. Tente de novo.",
   },
   en: {
@@ -57,6 +58,7 @@ export const translations = {
     "errors.stream_interrupted": "The reply was cut off. Please try again.",
     "errors.empty_reply": "The tutor didn't reply. Please try again.",
     "errors.exercise_failed": "I couldn't create an exercise right now. Please try again.",
+    "errors.rate_limited": "Too many messages in a row. Wait a minute and try again.",
     "errors.unknown": "Something went wrong. Please try again.",
   },
 };
