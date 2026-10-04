@@ -150,7 +150,7 @@ docs/                GIF da demo e screenshots
 
 ## Limites conhecidos e próximos passos
 
-- **A história nem sempre bate com a equação.** Na demo, a Gabi "tem 10 copos e quer 94", mas aí cada copo "custa R$ 7". O código não tem como conferir isso, então o próximo passo é uma eval só para as histórias.
+- **Uma eval para as histórias.** A conta já é garantida pelo código. O próximo nível é garantir que cada história combine certinho com a equação, medido por um juiz, do mesmo jeito que o tutor.
 - **A eval chegou no teto.** O v4 tira 10,0, então as próximas melhorias são casos de teste mais difíceis e um juiz mais forte.
 - **Prompt caching** poderia baratear o system prompt longo, já que quase tudo nele nunca muda.
 - **Sair do prefill.** Os modelos mais novos do Claude não aceitam prefill. O caminho é usar structured outputs, que também deixaria o Sonnet ser o juiz.

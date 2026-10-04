@@ -150,7 +150,7 @@ docs/                demo GIF and screenshots
 
 ## Known limits and next steps
 
-- **Stories don't always match the equation.** In the demo above, Elisa "goes up 7 floors, then 21 more, reaching the 98th floor", which doesn't really lead to 7x + 21 = 98. Code can't check that, so the next step is an eval just for stories.
+- **An eval for the stories.** The math is already guaranteed by code. The next level is making sure every story fits its equation perfectly, measured by a judge the same way the tutor is.
 - **The eval hit its ceiling.** v4 scores 10.0, so the next improvements are harder test cases and a stronger judge.
 - **Prompt caching** could cut the cost of the long system prompt, since most of it never changes.
 - **Moving away from prefill.** Newer Claude models don't accept prefill. The way forward is structured outputs, which would also let Sonnet act as the judge.
