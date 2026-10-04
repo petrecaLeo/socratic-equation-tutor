@@ -4,7 +4,7 @@
 
 Um tutor de matemática que nunca entrega a resposta. Ele ajuda estudantes (de uns 12 a 14 anos) a resolver equações do 1º grau, uma dica de cada vez, usando o Claude.
 
-![Demo: o estudante pede ajuda, o tutor dá uma dica, confirma um passo certo e depois confirma a resposta final](docs/demo.gif)
+![Demo: o estudante pede ajuda, o tutor dá uma dica, confirma um passo certo e depois confirma a resposta final](docs/demo-pt.gif)
 
 ## Por que eu fiz isso
 
@@ -24,7 +24,7 @@ Fiz o projeto programando em dupla com o Claude Code.
 
 | Inglês, tema escuro | Celular |
 |---|---|
-| ![O estudante pede a resposta antes de uma prova e o tutor recusa com gentileza, oferecendo um primeiro passo](docs/screenshot-dark-en.png) | ![O app na tela de um celular](docs/screenshot-mobile.png) |
+| ![O estudante pede a resposta antes de uma prova e o tutor recusa com gentileza, oferecendo um primeiro passo](docs/screenshot-dark-en.png) | ![O app na tela de um celular](docs/screenshot-mobile-pt.png) |
 
 ## Como funciona
 

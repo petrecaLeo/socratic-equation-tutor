@@ -4,7 +4,7 @@
 
 A math tutor that never hands you the answer. It helps students (around 12 to 14 years old) solve linear equations one hint at a time, powered by Claude.
 
-![Demo: the student asks for help, the tutor gives a hint, confirms a correct step and then confirms the final answer](docs/demo.gif)
+![Demo: the student asks for help, the tutor gives a hint, confirms a correct step and then confirms the final answer](docs/demo-en.gif)
 
 ## Why I built this
 
@@ -24,7 +24,7 @@ I built it pairing with Claude Code.
 
 | English, dark theme | Mobile |
 |---|---|
-| ![The student asks for the answer before a test and the tutor kindly refuses, offering a first step](docs/screenshot-dark-en.png) | ![The app on a phone screen](docs/screenshot-mobile.png) |
+| ![The student asks for the answer before a test and the tutor kindly refuses, offering a first step](docs/screenshot-dark-en.png) | ![The app on a phone screen](docs/screenshot-mobile-en.png) |
 
 ## How it works
 
@@ -77,13 +77,13 @@ The test set has 19 situations: asking for the answer, insisting after a hint, s
 
 Each round used a stricter judge, so only the scores **in the same row** can be compared. That's why the previous version always ran again next to the new one.
 
-What each round fixed, in the tutor's own words (the tutor speaks Portuguese here, translations in parentheses):
+What each round fixed, in the tutor's own words. The eval runs in Portuguese, so these are translations of real answers (the originals are in [`evals/results/`](evals/results/)):
 
 | The student says | Before | After |
 |---|---|---|
-| "deu x = 4. ta certo?" (I got x = 4, is it right?) | v1: "Em vez de eu te dizer se está certo, que tal você mesmo conferir?" (Instead of me telling you, why don't you check it yourself?) | v4: "Isso, x = 4 está certo, parabéns!" (Yes, x = 4 is right, congrats!) |
-| "juntei os x e ficou 4x - 10 = 14" (a **correct** step) | v2: "Só confere o sinal: 7x e 3x estavam no mesmo lado?" (doubted a step that was right) | v4: "Isso, esse passo está certo!" (Yes, that step is right!) |
-| "deu x = 7" (wrong) | v3: asked them to check, but never said it was wrong | v4: "Ainda não está certo, mas dá para achar o erro." (Not quite yet, but we can find the mistake.) |
+| "I got x = 4. Is it right?" | v1: "Instead of me telling you whether it's right, why don't you check it yourself?" | v4: "Yes, x = 4 is right, well done! 🎉" |
+| "I combined the x terms and got 4x - 10 = 14" (a **correct** step) | v2: "Just check the sign: were 7x and 3x on the same side?" | v4: "Yes, that step is right!" |
+| "I got x = 7" (wrong, the answer is 6) | v3: asked the student to check, but never said it was wrong | v4: "Not quite yet, but we can find the mistake." |
 
 Answers also got much shorter (from about 80 to about 38 words) and lost the Markdown asterisks that showed up raw in the chat bubble.
 
@@ -150,7 +150,7 @@ docs/                demo GIF and screenshots
 
 ## Known limits and next steps
 
-- **Stories don't always match the equation.** In the demo, Gabi "has 10 glasses and wants 94", but then each glass "costs R$ 7". Code can't check that, so the next step is an eval just for stories.
+- **Stories don't always match the equation.** In the demo above, Elisa "goes up 7 floors, then 21 more, reaching the 98th floor", which doesn't really lead to 7x + 21 = 98. Code can't check that, so the next step is an eval just for stories.
 - **The eval hit its ceiling.** v4 scores 10.0, so the next improvements are harder test cases and a stronger judge.
 - **Prompt caching** could cut the cost of the long system prompt, since most of it never changes.
 - **Moving away from prefill.** Newer Claude models don't accept prefill. The way forward is structured outputs, which would also let Sonnet act as the judge.
