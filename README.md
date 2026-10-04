@@ -90,7 +90,7 @@ Answers also got much shorter (from about 80 to about 38 words) and lost the Mar
 ### What I learned
 
 1. **Read the answers, not just the scores.** Every important bug was found by reading: the refusal to confirm, the made up mistake, steps the student never showed, and even a bug in the judge itself, which wasn't being told the exercise's story.
-2. **When the tutor gets better than the test, improve the test.** Three times a perfect 10.0 was hiding real problems.
+2. **When the tutor gets better than the test, improve the test.** More than once a near perfect score (9.9, then 10.0) was hiding real problems.
 3. **Code counts, the model understands.** Code checks length, formatting and leaks perfectly and for free. The judge checks meaning. The same idea fixed the exercise generator: Haiku kept getting its own arithmetic wrong, so now code picks the numbers and the model only writes the story.
 4. **Examples get copied word for word.** The example equation's answer (7) is never an answer in the test set, and a test makes sure of it.
 5. **Every rule costs money on every message.** The prompt grew from about 200 to about 1,350 tokens, and a tutor reply went from $0.0022 to $0.0035.

@@ -90,7 +90,7 @@ As respostas também ficaram bem mais curtas (de umas 80 para umas 38 palavras) 
 ### O que eu aprendi
 
 1. **Leia as respostas, não só as notas.** Todos os bugs importantes apareceram lendo: a recusa em confirmar, o erro inventado, os passos que o estudante nunca mostrou e até um bug no próprio juiz, que não recebia a história do exercício.
-2. **Quando o tutor fica melhor que a prova, melhore a prova.** Três vezes, um 10,0 perfeito escondia problemas de verdade.
+2. **Quando o tutor fica melhor que a prova, melhore a prova.** Mais de uma vez, uma nota quase perfeita (9,9 e depois 10,0) escondia problemas de verdade.
 3. **O código conta, o modelo entende.** O código confere tamanho, formatação e vazamento com perfeição e de graça. O juiz confere o sentido. A mesma ideia consertou o gerador de exercícios: o Haiku errava a própria conta, então agora o código escolhe os números e o modelo só escreve a história.
 4. **Exemplo é copiado ao pé da letra.** A resposta da equação dos exemplos (7) não é resposta de nenhum caso de teste, e um teste garante isso.
 5. **Cada regra custa dinheiro em toda mensagem.** O prompt foi de uns 200 para uns 1.350 tokens, e cada resposta do tutor foi de US$ 0,0022 para US$ 0,0035.
