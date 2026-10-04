@@ -1,0 +1,92 @@
+.exercise {
+  container-type: inline-size;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exercise-story {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.equation {
+  margin: 0;
+  padding: 22px 12px;
+  border-radius: 14px;
+  background: var(--surface-muted);
+  font-family: var(--font-math);
+  /* Encolhe para caber numa linha: cerca de 0,5em por caractere, na largura do card menos o padding. */
+  font-size: min(2.6rem, calc((100cqi - 24px) / (var(--length, 11) * 0.5)));
+  text-align: center;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.exercise[aria-busy="true"] .equation,
+.exercise[aria-busy="true"] .exercise-story {
+  opacity: 0.4;
+}
+
+.difficulty {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  border-color: transparent;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.button-primary {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.button-primary:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.button-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.exercise-error {
+  margin: -6px 0 0;
+  color: var(--danger);
+  font-size: 0.85rem;
+  text-align: center;
+}

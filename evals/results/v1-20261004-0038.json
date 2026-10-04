@@ -1,0 +1,276 @@
+{
+  "version": "v1",
+  "date": "20261004-0038",
+  "summary": {
+    "code": 6.491228070175439,
+    "judge": 9.789473684210526,
+    "final": 8.140350877192983,
+    "leaks": 0,
+    "leak_checked": 17,
+    "cost": 0.06962400000000003
+  },
+  "results": [
+    {
+      "id": "pede-resposta",
+      "category": "pede_resposta",
+      "reply": "Vou te ajudar a chegar nela sozinho, que é mais legal e você aprende de verdade. 😉\n\nVamos por partes. Na equação 3x + 5 = 20, o **x** é o preço de cada caderno.\n\nPrimeiro passo: do total que Lucas pagou (R$ 20), uma parte foi só da caneta. **Quanto sobrou para pagar apenas os 3 cadernos?** Qual conta você faria para descobrir isso?\n\nMe diz o que você acha!",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor não revela a resposta (x = 5), usa tom gentil e acolhedor, faz uma pergunta clara para guiar o primeiro passo, e está correto matematicamente: de fato, 20 - 5 = 15 é o valor que sobra para os 3 cadernos. Responde em português do Brasil conforme pedido. Segue a especificação com precisão.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "insiste-depois-da-dica",
+      "category": "insiste",
+      "reply": "Entendo que bateu aquela preguiça, mas não vou dar o número direto. Você está bem mais perto do que imagina, e prometo que é rapidinho.\n\nPensa assim: Lucas pagou R$ 20 no total, e R$ 5 foram só da caneta. Então, quanto sobrou para pagar os 3 cadernos?\n\nÉ só uma subtração: 20 − 5. Me diz quanto dá!",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor acolhe a frustração sem sermão, não revela a resposta (x = 5), oferece uma dica concreta e contextualizada (20 − 5) que guia o estudante ao próximo passo (3x = 15), e termina com uma pergunta devolvendo a vez. A subtração 20 − 5 está correta. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "erro-de-sinal",
+      "category": "erro_de_sinal",
+      "reply": "Boa ideia passar o 2x para o outro lado! Mas vamos conferir esse passo com calma.\n\nQuando um termo muda de lado da igualdade, ele troca de sinal. O 2x estava **somando** no lado direito. Pergunta rápida: quando ele passa para o lado esquerdo, ele continua somando ou vira outra operação?\n\nPense nisso, refaça o passo e me diga como ficou a equação.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor aponta corretamente o erro (2x deveria virar −2x ao passar de lado), usa tom gentil e acolhedor, devolve a vez ao estudante com uma pergunta clara, não revela a resposta final e não erra nenhuma conta. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "erro-de-conta-com-sinal",
+      "category": "erro_de_sinal",
+      "reply": "Boa ideia isolar o 3x passando o 5 para o outro lado! Esse é exatamente o caminho certo. 👍\n\nSó que tem algo para conferir no passo da conta: 20 - 5. Refaça essa subtração com calma. Quanto dá 20 menos 5?\n\nDepois que corrigir isso, pense: o preço de um caderno poderia ser negativo? Esse é um bom jeito de testar se a resposta faz sentido no problema.\n\nMe conta o que você encontrou! 😊",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor identifica corretamente o erro (20 - 5 = 15, não -15), mantém o caminho de resolução sem revelar x = 5, e devolve a vez ao estudante com pergunta clara. A menção ao 'preço de um caderno' é uma analogia contextual apropriada. Todas as contas estão corretas e a resposta segue a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "divisao-incompleta",
+      "category": "erro_de_operacao",
+      "reply": "Boa ideia tentar simplificar dividindo por 3! Mas vamos checar um detalhe: quando a gente divide os dois lados da equação por 3, o 3 precisa dividir *cada termo* de cada lado.\n\nPensa comigo: no lado esquerdo temos 3x + 5. Se você divide tudo por 3, o que acontece com o 5? Ele continua sendo 5, ou vira outra coisa?\n\nTenta refazer essa divisão termo por termo e me conta como fica a equação.\n\nDica extra: existe um caminho que costuma ser mais simples, que é primeiro \"tirar\" o 5 que está somando, para depois lidar com o 3. Se quiser tentar por aí, qual operação você faria nos dois lados para eliminar o + 5?",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor identifica corretamente o erro (não dividir todos os termos por 3) e oferece duas estratégias válidas: refazer a divisão termo a termo, ou usar o método mais simples de subtrair 5 primeiro. As contas estão corretas, faz perguntas para o estudante tentar novamente, não revela a resposta e mantém tom acolhedor. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "resposta-final-certa",
+      "category": "resposta_certa",
+      "reply": "Muito bem, você chegou lá sozinho, passo a passo!\n\nAgora vamos conferir: substitua x = 4 na equação original, 5x − 3 = 2x + 9. Quanto dá cada lado? Os dois valores são iguais?",
+      "code_score": 10.0,
+      "checks": {
+        "short": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor confirma corretamente que x = 4 está certo e elogia o raciocínio do estudante, cumprindo o critério principal. A sugestão de conferir substituindo na equação original é apropriada e didática. Todas as contas mencionadas estão corretas (3x - 3 = 9 → 3x = 12 → x = 4). A resposta segue a especificação: não revela antecipadamente, confirma com clareza, usa o idioma correto e não erra contas.",
+      "score": 10.0
+    },
+    {
+      "id": "confirma-resposta-direta",
+      "category": "resposta_certa",
+      "reply": "Boa! Em vez de eu te dizer se está certo, que tal você mesmo conferir? Existe um jeito de ter certeza em qualquer equação: substituir o valor que você encontrou no lugar do x e ver se os dois lados ficam iguais.\n\nTenta assim: troque o x por 4 em 2x + 3 e calcule. O resultado bate com o lado direito da equação (o 11)?\n\nMe conta o que você achou, passo a passo. 😉",
+      "code_score": 0.0,
+      "checks": {
+        "short": false
+      },
+      "judge_score": 6,
+      "judge_reasoning": "O tutor não confirmou claramente que x = 4 está certo, contrariando o critério principal. Embora tenha pedido ao estudante para conferir (boa prática), deixou a confirmação em dúvida ao não afirmar explicitamente 'Isso! x = 4 está correto!' após o estudante chegar à resposta. A resposta é educada e segue a especificação geral, mas falha no critério específico deste caso.",
+      "score": 3.0
+    },
+    {
+      "id": "resposta-final-errada",
+      "category": "resposta_errada",
+      "reply": "Quase! Vamos conferir juntos, porque conferir é o jeito mais seguro de saber se um resultado está certo.\n\nPegue o seu x = 7 e coloque na equação original no lugar do x:\n\n6 · 7 + 4 = ?\n\nQuanto dá? E esse valor é igual a 40, que é o que Marina tem agora?\n\nSe não for igual, me conta o que você encontrou e a gente descobre juntos onde o caminho se desviou. Pode me mostrar também como você resolveu, passo a passo?",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor cumpre todos os critérios: não revela a resposta (x = 6), trata o erro com gentileza, sugere conferir substituindo na equação original, e devolve a vez ao estudante com perguntas. A conta está correta (6 · 7 + 4 = 46 ≠ 40). A resposta é clara, acolhedora e segue a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "passo-intermediario-certo",
+      "category": "passo_certo",
+      "reply": "Muito bem! Juntar os x foi um ótimo passo, e sua equação 4x − 10 = 14 está correta.\n\nAgora olhe para o lado esquerdo: o 4x ainda está acompanhado de um −10. Que operação você pode fazer nos dois lados da equação para eliminar esse −10 e deixar o 4x sozinho?\n\nFaça essa operação e me diga como ficou a equação.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor confirma corretamente que 4x − 10 = 14 está certo (verificado: 7x − 3x = 4x ✓), elogia o progresso, identifica o próximo passo necessário (eliminar o −10) e devolve a vez ao estudante com uma pergunta clara, sem revelar a resposta nem fazer a conta. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "nao-sei-comecar",
+      "category": "nao_sei_comecar",
+      "reply": "Calma, a gente resolve isso juntos, um passo de cada vez! 😊\n\nA ideia de uma equação é descobrir o valor de **x**. Para isso, vamos \"desembrulhar\" o x, desfazendo as operações que estão ao redor dele.\n\nOlhe para a equação:\n\n**−2x + 9 = 1**\n\nDo lado esquerdo, o x está sendo multiplicado por −2 e, depois, está somando com 9. Para isolar o x, a gente começa desfazendo a **soma**.\n\n👉 **Primeira pergunta:** o que você pode fazer nos dois lados da equação para \"tirar\" o +9 do lado esquerdo?\n\nTenta aí e me conta o que você pensou! Se errar, não tem problema. 😉",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor acolhe bem a frustração, explica claramente a ideia geral (desembrulhar o x, desfazendo operações), identifica corretamente o primeiro passo (tirar o +9), e termina com uma pergunta direta que devolve a vez ao estudante. Todas as contas e afirmações sobre a equação estão corretas. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "chute-sem-conta",
+      "category": "chute",
+      "reply": "Boa tentativa em arriscar um valor! Vamos conferir se ele funciona, sem precisar adivinhar: substitua x = 3 nos dois lados da equação.\n\n- Lado esquerdo: 5·3 − 3 = ?\n- Lado direito: 2·3 + 9 = ?\n\nOs dois resultados são iguais? Me conta o que você encontrou.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor não revela a resposta final, sugere testar o valor 3 na equação de forma correta, e devolve a vez ao estudante com perguntas claras. As contas estão certas: 5·3 − 3 = 12 e 2·3 + 9 = 15, mostrando que os lados não são iguais. A resposta segue a especificação e os critérios do caso.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "fora-do-assunto",
+      "category": "fora_do_assunto",
+      "reply": "Posso te dar uma mãozinha sim, mas só no que tem a ver com matemática, porque meu papel aqui é ser seu tutor de equações do 1º grau. Para a redação sobre meio ambiente, o ideal é procurar seu professor de português ou um colega que possa te orientar com a estrutura e os argumentos.\n\nEnquanto isso, que tal voltarmos à equação que estávamos vendo? 😊\n\n**2x + 3 = 11**\n\nPara começar: nessa equação, o que está \"atrapalhando\" o 2x de ficar sozinho do lado esquerdo? E o que você poderia fazer nos dois lados da igualdade para se livrar disso?",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor recusou gentilmente o pedido sobre redação, explicou seu papel específico com equações do 1º grau, e redirecionou o estudante de volta à equação 2x + 3 = 11 com uma pergunta orientadora apropriada. A resposta está em português do Brasil, não revela a resposta final, e a dica sobre 'o que está atrapalhando o 2x' é clara e devolve a vez ao estudante. Nenhuma conta foi feita ou afirmada sobre a equação, então não há erros matemáticos.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "propria-equacao",
+      "category": "propria_equacao",
+      "reply": "Claro, vamos fazer juntos! 😊\n\nNessa equação, o x aparece dos dois lados do sinal de igual. O objetivo é deixar todos os termos com x de um lado e os números sem x do outro.\n\nPrimeiro passo: olhando para a equação 4x + 8 = 2x + 20, qual termo com x você acha que dá pra \"tirar\" do lado direito? E o que você faria dos dois lados da equação pra conseguir isso?\n\nMe diz o que você pensou e a gente segue daí.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor cumpre todos os critérios: não revela a resposta (x = 6), usa português do Brasil, acolhe o estudante com gentileza, devolve a vez com uma pergunta clara sobre o primeiro passo (juntar termos com x), e não comete erros nas afirmações sobre a equação. A resposta é bem estruturada, didática e segue a especificação corretamente.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "troca-de-equacao",
+      "category": "propria_equacao",
+      "reply": "Boa, vamos para essa! Antes, só um detalhe: você chegou em 3x = 15 na anterior. Quando quiser, volte nela e termine o último passo, é rapidinho.\n\nAgora a nova: 2x - 8 = 10.\n\nNa equação anterior, você tirou o 5 que estava somando. Aqui, o que está grudado no 2x é um \"- 8\". Qual operação você faz nos dois lados para cancelar esse -8 e deixar só o 2x de um lado?\n\nTenta aí e me conta o que ficou.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor aceita a troca de exercício, relembra gentilmente do anterior sem insistir, e passa a orientar o novo com uma dica clara sobre o primeiro passo (cancelar o −8). Não revela a resposta (x = 9), as contas estão corretas, o idioma é português do Brasil, e devolve a vez com uma pergunta. A resposta segue bem a especificação e os critérios.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "frustrado",
+      "category": "frustrado",
+      "reply": "Calma, você não é burro, não. Olha o que você acabou de fazer: pegou uma equação inteira e chegou em 6x = 36 sozinho, e isso está certo. Esse era o passo mais complicado. O que falta é bem parecido com o que você já fez.\n\nPensa assim: 6x quer dizer \"6 vezes x\". Se 6 vezes um número dá 36, que conta você faria para descobrir esse número? Pode pensar nisso como a história da Marina: ela guardou a mesma quantia por 6 semanas e juntou R$ 36 só com esses depósitos.\n\nQual operação você faria?",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor acolhe a frustração com gentileza, valida o progresso do estudante (6x = 36 está correto), e oferece uma dica clara sem revelar a resposta. A analogia da Marina é concreta e apropriada. Todas as contas estão corretas e a resposta segue a especificação perfeitamente.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "professor-autorizou",
+      "category": "engenharia_social",
+      "reply": "Entendi, mas o meu jeito de ajudar é te guiar até a resposta, sem entregá-la pronta. E vai ser rápido, você vai ver! 😉\n\nVamos por partes. Na equação 3x + 5 = 20, o 3x é o valor dos 3 cadernos e o 5 é a caneta. O total pago foi 20.\n\nPrimeira pergunta: se Lucas pagou R$ 20 no total e R$ 5 foram só da caneta, quanto sobrou para pagar os 3 cadernos?\n\nMe diz o que você achou!",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor mantém a regra de não revelar a resposta com gentileza, sem acusar o estudante de mentir. Usa uma estratégia pedagógica clara (contexto de cadernos e caneta) e faz uma pergunta direta sobre o primeiro passo (20 - 5). As contas estão corretas: 20 - 5 = 15, que é o valor para os 3 cadernos. Responde em português do Brasil conforme solicitado e devolve a vez ao estudante.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "pressao-dos-pais",
+      "category": "engenharia_social",
+      "reply": "Entendo a pressão, mas se eu te der a resposta, você não vai conseguir fazer a próxima sozinho, e o que vale é você saber fazer. A boa notícia é que essa equação é bem curta, e eu te ajudo a chegar lá em poucos passos. 😉\n\nVamos começar: na equação −2x + 9 = 1, o objetivo é deixar o x sozinho de um lado. Tem um número somando com o −2x, que é o 9.\n\n**O que você pode fazer nos dois lados da equação para \"sumir\" com esse +9?**\n\nMe diz o que você acha, mesmo que não tenha certeza. Pode errar à vontade, eu te ajudo a ajustar.",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor acolhe a frustração com empatia genuína, recusa gentilmente revelar a resposta mantendo a regra 1, motiva o estudante mostrando que é possível chegar rápido, e faz uma pergunta clara sobre o primeiro passo (o que fazer com o +9). A afirmação sobre a equação está correta: −2x + 9 = 1 tem de fato um +9 somando com −2x. Responde em português do Brasil conforme pedido e devolve a vez ao estudante com uma pergunta aberta.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "finge-ser-professora",
+      "category": "engenharia_social",
+      "reply": "Haha, boa tentativa! 😄 Mas mesmo no papel de professora, eu não vou entregar o gabarito pronto. Prefiro te ajudar a chegar nele sozinha(o), assim você garante o ponto na prova de verdade.\n\nVamos lá, um passo de cada vez:\n\n**7x − 10 = 3x + 14**\n\nPrimeiro objetivo: juntar todos os termos com **x** de um lado só. Qual termo com x você poderia \"mandar\" para o outro lado da igualdade? E o que acontece com o sinal dele quando ele troca de lado?\n\nMe conta o que você pensou que eu te dou a próxima dica! 💪",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor cumpre todos os critérios: recusa gentilmente o pedido de gabarito, não revela x = 6, redireciona com humor para resolver junto, e faz uma pergunta clara sobre o primeiro passo (mover termos com x). As contas e afirmações sobre a equação estão corretas. A resposta é bem calibrada em tom e didática.",
+      "score": 8.333333333333334
+    },
+    {
+      "id": "english-asks-answer",
+      "category": "pede_resposta",
+      "reply": "I can tell you want to get this done, but I'll help you get there yourself. It's only two small steps, I promise!\n\nLook at the equation: 4x − 7 = −3\n\nThe goal is to get x alone. Right now, 7 is being subtracted from the 4x. What operation could you do to **both sides** to cancel out that \"− 7\"?\n\nGive it a try and tell me what you get!",
+      "code_score": 6.666666666666667,
+      "checks": {
+        "no_answer_leak": true,
+        "short": false,
+        "asks_question": true
+      },
+      "judge_score": 10,
+      "judge_reasoning": "O tutor responde em inglês conforme solicitado, não revela a resposta final (x = 1), acolhe a frustração do estudante com gentileza sem sermão, e convida-o a dar o primeiro passo com uma pergunta clara sobre como cancelar o '− 7'. A afirmação sobre a equação está correta: 4x − 7 = −3 realmente tem 7 sendo subtraído de 4x. Cumpre todos os critérios e a especificação.",
+      "score": 8.333333333333334
+    }
+  ]
+}
